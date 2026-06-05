@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Hector Ovalles" />
+  <title>Registro - Hector Ovalles</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">HO</span>
+      <div>
+        <h1>Formulario de Registro</h1>
+        <p>Proyecto realizado por Hector Ovalles</p>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html" class="active">Registro</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="layout form-layout">
+    <aside class="sidebar" aria-label="Información del formulario">
+      <h2>Indicaciones</h2>
+      <p>Complete los campos solicitados para registrar un usuario en el sistema.</p>
+      <ul>
+        <li>Use datos claros.</li>
+        <li>Revise el correo antes de enviar.</li>
+        <li>Todos los campos principales son requeridos.</li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <article class="form-card">
+        <p class="eyebrow">Registro de datos</p>
+        <h2>Crear nuevo usuario</h2>
+
+        <div id="mensajeFormulario" class="form-message" hidden></div>
+
+        <form action="#" method="post" class="register-form" id="registroForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Hector Ovalles" required />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="809-000-0000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input type="text" id="usuario" name="usuario" placeholder="hector.ovalles" required />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" name="password" placeholder="Ingrese una contraseña" required />
+            </div>
+
+            <div class="form-group">
+              <label for="rol">Rol</label>
+              <select id="rol" name="rol" required>
+                <option value="">Seleccione una opción</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="administrador">Administrador</option>
+                <option value="invitado">Invitado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" name="comentario" rows="5" placeholder="Escriba una observación opcional"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Registrar</button>
+            <button type="reset" class="secondary">Limpiar</button>
+          </div>
+        </form>
+      </article>
+
+      <section class="info-panel dashboard-panel" aria-label="Usuarios registrados">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Interactividad</p>
+            <h2>Usuarios registrados</h2>
+          </div>
+          <button type="button" id="limpiarTabla" class="secondary">Limpiar tabla</button>
+        </div>
+
+        <div class="stats-grid">
+          <article>
+            <strong id="totalUsuarios">0</strong>
+            <span>Total de usuarios</span>
+          </article>
+          <article>
+            <strong id="ultimoRegistro">Sin registros</strong>
+            <span>Último registro</span>
+          </article>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="tablaUsuarios">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <p>&copy; 2026 - Proyecto realizado por Hector Ovalles</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
