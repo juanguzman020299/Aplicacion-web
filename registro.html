@@ -28,18 +28,18 @@
   <main class="layout form-layout">
     <aside class="sidebar" aria-label="Información del formulario">
       <h2>Indicaciones</h2>
-      <p>Complete los campos solicitados para registrar un usuario en el sistema.</p>
+      <p>Complete los campos para guardar un usuario en la base de datos.</p>
       <ul>
-        <li>Use datos claros.</li>
-        <li>Revise el correo antes de enviar.</li>
-        <li>Todos los campos principales son requeridos.</li>
+        <li>El correo y el usuario no pueden repetirse.</li>
+        <li>La contraseña debe tener al menos 6 caracteres.</li>
+        <li>Los datos se guardan en el servidor.</li>
       </ul>
     </aside>
 
     <section class="content">
       <article class="form-card">
-        <p class="eyebrow">Registro de datos</p>
-        <h2>Crear nuevo usuario</h2>
+        <p class="eyebrow">Persistencia de datos</p>
+        <h2 id="tituloFormulario">Crear nuevo usuario</h2>
 
         <div id="mensajeFormulario" class="form-message" hidden></div>
 
@@ -67,7 +67,8 @@
 
             <div class="form-group">
               <label for="password">Contraseña</label>
-              <input type="password" id="password" name="password" placeholder="Ingrese una contraseña" required />
+              <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required />
+              <small id="ayudaPassword">Obligatoria para crear un usuario.</small>
             </div>
 
             <div class="form-group">
@@ -87,8 +88,9 @@
           </div>
 
           <div class="form-actions">
-            <button type="submit">Registrar</button>
-            <button type="reset" class="secondary">Limpiar</button>
+            <button type="submit" id="botonGuardar">Registrar</button>
+            <button type="reset" class="secondary" id="botonLimpiar">Limpiar</button>
+            <button type="button" class="secondary" id="cancelarEdicion" hidden>Cancelar edición</button>
           </div>
         </form>
       </article>
@@ -96,10 +98,10 @@
       <section class="info-panel dashboard-panel" aria-label="Usuarios registrados">
         <div class="panel-header">
           <div>
-            <p class="eyebrow">Interactividad</p>
+            <p class="eyebrow">Base de datos</p>
             <h2>Usuarios registrados</h2>
           </div>
-          <button type="button" id="limpiarTabla" class="secondary">Limpiar tabla</button>
+          <button type="button" id="limpiarTabla" class="secondary">Eliminar todos</button>
         </div>
 
         <div class="stats-grid">
@@ -121,7 +123,9 @@
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Teléfono</th>
+                <th>Usuario</th>
                 <th>Rol</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody></tbody>

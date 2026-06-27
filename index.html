@@ -1,108 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hector Ovalles" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">
-        <span class="brand-logo">HO</span>
-        <div>
-          <h1>Dashboard Académico</h1>
-          <p>Proyecto Grupo 9</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Hector Ovalles" />
+  <title>Dashboard - Hector Ovalles</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">HO</span>
+      <div>
+        <h1>Dashboard Académico</h1>
+        <p>Proyecto realizado por Hector Ovalles</p>
       </div>
+    </div>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="registro.html">Registro</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </header>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-    <main class="layout">
-      <aside class="sidebar" aria-label="Panel lateral">
-        <h2>Menú</h2>
-        <ul>
-          <li><a href="#resumen">Resumen</a></li>
-          <li><a href="#actividades">Actividades</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="registro.html">Formulario</a></li>
-        </ul>
-      </aside>
+  <main class="layout">
+    <aside class="sidebar" aria-label="Panel lateral">
+      <h2>Menú</h2>
+      <ul>
+        <li><a href="#resumen">Resumen</a></li>
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="registro.html">Formulario</a></li>
+      </ul>
+    </aside>
 
-      <section class="content">
-        <article class="hero" id="resumen">
-          <div>
-            <p class="eyebrow">Etapa 2 - Interactividad</p>
-            <h2>Aplicación web con formulario interactivo</h2>
-            <p>
-              Esta etapa agrega JavaScript para validar datos, manejar eventos
-              del formulario, modificar contenido dinámicamente y guardar
-              registros en LocalStorage.
-            </p>
-            <a class="button" href="registro.html">Ir al formulario</a>
-          </div>
+    <section class="content">
+      <article class="hero" id="resumen">
+        <div>
+          <p class="eyebrow">Etapa 3 - Backend</p>
+          <h2>Aplicación web conectada a un servidor</h2>
+          <p>
+            Esta etapa utiliza PHP, una API REST y SQLite para guardar los usuarios de forma permanente mediante operaciones CRUD.
+          </p>
+          <a class="button" href="registro.html">Ir al formulario</a>
+        </div>
+      </article>
+
+      <section class="cards" id="actividades" aria-label="Resumen de actividades">
+        <article class="card">
+          <h3>Servidor PHP</h3>
+          <p>Procesa las solicitudes HTTP enviadas desde el formulario mediante una API REST.</p>
         </article>
-
-        <section
-          class="cards"
-          id="actividades"
-          aria-label="Resumen de actividades"
-        >
-          <article class="card">
-            <h3>HTML5 Semántico</h3>
-            <p>
-              Uso correcto de header, nav, main, aside, section, article y
-              footer.
-            </p>
-          </article>
-          <article class="card">
-            <h3>CSS Externo</h3>
-            <p>
-              Los estilos se encuentran organizados en un archivo externo dentro
-              de la carpeta css.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Diseño Responsive</h3>
-            <p>
-              El diseño se adapta a computadoras, tablets y teléfonos usando
-              Flexbox, Grid y Media Queries.
-            </p>
-          </article>
-        </section>
-
-        <section class="info-panel" id="servicios">
-          <h2>Servicios del sistema</h2>
-          <div class="service-grid">
-            <article>
-              <h3>Gestión de usuarios</h3>
-              <p>
-                Registro organizado con validación, eventos y almacenamiento
-                local.
-              </p>
-            </article>
-            <article>
-              <h3>Panel de seguimiento</h3>
-              <p>Visualización de indicadores importantes de la aplicación.</p>
-            </article>
-            <article>
-              <h3>Comunicación</h3>
-              <p>Área preparada para mostrar avisos, mensajes y novedades.</p>
-            </article>
-          </div>
-        </section>
+        <article class="card">
+          <h3>Base de datos SQLite</h3>
+          <p>Los registros quedan almacenados en una base de datos SQL dentro del servidor.</p>
+        </article>
+        <article class="card">
+          <h3>Operaciones CRUD</h3>
+          <p>Permite crear, consultar, actualizar y eliminar usuarios desde la aplicación.</p>
+        </article>
       </section>
-    </main>
 
-    <footer class="site-footer" id="contacto">
-      <p>&copy; 2026 - Proyecto realizado por Grupo 9</p>
-    </footer>
-  </body>
+      <section class="info-panel" id="servicios">
+        <h2>Servicios del sistema</h2>
+        <div class="service-grid">
+          <article>
+            <h3>Gestión de usuarios</h3>
+            <p>Registro, consulta, modificación y eliminación de usuarios.</p>
+          </article>
+          <article>
+            <h3>Persistencia de datos</h3>
+            <p>La información permanece guardada aunque se cierre el navegador.</p>
+          </article>
+          <article>
+            <h3>Seguridad básica</h3>
+            <p>Las contraseñas se guardan mediante hash y no se devuelven al frontend.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <p>&copy; 2026 - Proyecto realizado por Hector Ovalles</p>
+  </footer>
+</body>
 </html>

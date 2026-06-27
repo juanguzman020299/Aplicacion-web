@@ -1,88 +1,79 @@
-# Proyecto Web - Etapa 1: Maquetación
+# Proyecto Integrador – Etapa 3: Backend y Persistencia de Datos
 
-## Nombre
-
-Dariel Medina Ynfante
-Líder
-
+## Participantes
+Dariel Medina Ynfante Líder
 Héctor Antonio Ovalles Alonzo
-
 Junior Alejandro Gómez Ruiz
-
 Rafael David Sánchez Arias
-
 Rafael Alejandro Grullón Germán
-
-Nicole Cepeda Acosta
+Nicole Cepeda Acosta 
 
 ## Descripción
-
-Este proyecto corresponde a la Etapa 1 del desarrollo de una aplicación web profesional. Contiene una interfaz principal tipo Dashboard y un formulario de registro de datos.
-
-## Objetivo
-
-Establecer la base visual y semántica de la aplicación utilizando HTML5 y CSS externo.
+Esta versión conecta el frontend de la Etapa 2 con un servidor desarrollado en PHP. Los usuarios se guardan de forma permanente en una base de datos SQLite mediante una API REST.
 
 ## Tecnologías utilizadas
-
 - HTML5
 - CSS3
-- Flexbox
-- CSS Grid
-- Media Queries
-- Git
-- GitHub
+- JavaScript
+- PHP 8 o superior
+- SQLite mediante PDO
+- API REST
 
-## Páginas incluidas
+## Funciones implementadas
+- Crear usuarios.
+- Consultar todos los usuarios.
+- Actualizar usuarios.
+- Eliminar un usuario.
+- Eliminar todos los usuarios.
+- Validación de correo, teléfono dominicano, roles y contraseña.
+- Control de registros duplicados.
+- Contraseñas protegidas con `password_hash`.
+- Sesión PHP para registrar el último usuario creado.
 
-- `index.html`: página principal tipo Home/Dashboard.
-- `registro.html`: formulario de registro de datos.
-- `css/style.css`: hoja de estilos externa.
-
-## Estructura semántica utilizada
-
-El proyecto usa etiquetas HTML5 como:
-
-- `header`
-- `nav`
-- `main`
-- `aside`
-- `section`
-- `article`
-- `footer`
-
-## Diseño responsive
-
-La página se adapta a diferentes tamaños de pantalla mediante Flexbox, CSS Grid y Media Queries.
-
-## Colores utilizados
-
-- Azul institucional: `#001B3B`
-- Amarillo institucional: `#FFB121`
-
-## Participantes que trabajaron
-
-- Hector Ovalles
-
-## Rama de trabajo recomendada
-
-`etapa-1/maquetacion`
-
-## Comandos sugeridos para subir a GitHub
-
-```bash
-git init
-git checkout -b etapa-1/maquetacion
-git add index.html
-git commit -m "Crear pagina principal con estructura semantica"
-git add registro.html
-git commit -m "Agregar formulario de registro"
-git add css/style.css README.md
-git commit -m "Agregar estilos responsive y documentacion"
-git remote add origin URL_DE_TU_REPOSITORIO
-git push -u origin etapa-1/maquetacion
+## Estructura principal
+```text
+api/usuarios.php          API con operaciones CRUD
+config/database.php       Conexión y creación automática de SQLite
+database/database.sql     Script de exportación de la base de datos
+js/app.js                 Integración del frontend con la API
+registro.html             Formulario y tabla de usuarios
 ```
 
-## Entrega
+## Instalación con XAMPP en Windows
+1. Instale XAMPP y confirme que PHP tenga habilitadas las extensiones `pdo_sqlite` y `sqlite3`.
+2. Copie la carpeta del proyecto dentro de:
+   `C:\xampp\htdocs\etapa-3-backend`
+3. Abra el panel de XAMPP e inicie **Apache**.
+4. En el navegador, entre a:
+   `http://localhost/etapa-3-backend/`
+5. Abra la página **Registro** y guarde un usuario.
 
-El enlace del repositorio debe entregarse en Moodle.
+La base de datos `database/proyecto.sqlite` se crea automáticamente al utilizar la aplicación por primera vez.
+
+> No abra el proyecto dando doble clic sobre `index.html`, porque la API PHP necesita ejecutarse desde Apache.
+
+## Endpoints de la API
+| Método | Ruta | Función |
+|---|---|---|
+| GET | `api/usuarios.php` | Consultar todos los usuarios |
+| GET | `api/usuarios.php?id=1` | Consultar un usuario |
+| POST | `api/usuarios.php` | Crear usuario |
+| PUT | `api/usuarios.php?id=1` | Actualizar usuario |
+| DELETE | `api/usuarios.php?id=1` | Eliminar usuario |
+| DELETE | `api/usuarios.php?all=1` | Eliminar todos los usuarios |
+
+## Rama solicitada
+```bash
+git checkout main
+git pull origin main
+git checkout -b etapa-3/backend
+```
+
+Luego de subir los cambios:
+```bash
+git add .
+git commit -m "Configurar servidor PHP y base de datos SQLite"
+git push -u origin etapa-3/backend
+```
+
+Finalmente, se debe crear el **Pull Request o Merge Request** desde `etapa-3/backend` hacia `main`.
